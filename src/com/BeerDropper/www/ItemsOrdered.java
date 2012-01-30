@@ -8,20 +8,21 @@ public class ItemsOrdered {
 	
 	private String item_name;
 	int quantity;
-	private final double UNIT_PRICE=9.99;
+	private double UnitPrice;
 
-	public ItemsOrdered(String product_name, int quantity) {
+	public ItemsOrdered(String product_name, int quantity, double UnitPrice) {
 		//super();
 		this.item_name = product_name;
 		this.quantity = quantity;
+		this.UnitPrice = UnitPrice;
 	
 	}
 
-	public String getProduct_name() {
+	public String getProductName() {
 		return item_name;
 	}
 
-	public void setProduct_name(String product_name) {
+	public void setProductName(String product_name) {
 		this.item_name = product_name;
 	}
 
@@ -33,11 +34,11 @@ public class ItemsOrdered {
 		this.quantity = quantity;
 	}
 	public double getTotal(){
-		return getQuantity()*UNIT_PRICE;
+		return getQuantity()*UnitPrice;
 	}
 
 	public String toString(){
-		return this.quantity+"of "+this.getProduct_name()+"\t@"+UNIT_PRICE+"\n";
+		return this.quantity+" of "+this.getProductName()+"\t$"+UnitPrice+"\n";
 	}
 	
 	

@@ -12,22 +12,27 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/longlogo" />
 
-
+  
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
         android:orientation="vertical" >
-        
+   <ScrollView
+       android:layout_width="match_parent"
+	   android:layout_height="match_parent">
         <TextView
+        android:id="@+id/order"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@string/users_order"
+        android:gravity="center_vertical|center_horizontal"
+        android:text=""
         android:textSize="20sp"
-        android:textStyle="italic"
+        android:textStyle="normal"
         android:typeface="serif" />
+    </ScrollView>
     </LinearLayout>
 
     <TableLayout

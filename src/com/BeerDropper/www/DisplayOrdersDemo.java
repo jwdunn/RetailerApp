@@ -103,12 +103,15 @@ public class DisplayOrdersDemo extends ListActivity {
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		Log.d("on list item click", "position"+position);
+		Log.d("on list item click", "position"+ position);
 		Intent i = new Intent(this, OrderActivity.class);
 		i.putExtra("userID", orderList.get(position).getCustomer().getId());
 		i.putExtra("userName", orderList.get(position).getCustomer().getName());
 		i.putExtra("address",orderList.get(position).getCustomer().getAddress());
 		i.putExtra("phoneNumber", orderList.get(position).getCustomer().getPhone());
+		i.putExtra("OrderList", orderList.get(position).getItemsOrderedString());
+		i.putExtra("OrderStatus", orderList.get(position).getOrderStatus());
+		i.putExtra("OrderTotal", orderList.get(position).getOrderTotal());
 		startActivity(i);
 
 //				// TODO Update server database about order status

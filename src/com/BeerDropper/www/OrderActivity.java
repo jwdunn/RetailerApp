@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -20,11 +21,13 @@ public class OrderActivity extends Activity implements OnClickListener {
 	ImageView imageCaptured;
 	
 	/* get data from previous activity*/
-	String phoneNumber=null;
+	int phoneNumber=0;
 	String address=null;
 	String userName=null;
-	String userID=null;
-	Boolean orderStatus;
+	int userID=0;
+	String OrderList;
+	Boolean OrderStatus;
+	double OrderTotal;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -37,17 +40,22 @@ public class OrderActivity extends Activity implements OnClickListener {
 		 */
 	      Bundle extras = getIntent().getExtras();  
 	      if(extras !=null) {
-	          userID = extras.getString("userID");
+	          userID = extras.getInt("userID");
 	          userName = extras.getString("userName");
-	          phoneNumber=extras.getString("phoneNumber");
-	          address=extras.getString("address");
-	          orderStatus = extras.getBoolean("orderStatus");
+	          phoneNumber=extras.getInt("phoneNumber");
+	          address =extras.getString("address");
+	          OrderStatus = extras.getBoolean("OrderStatus");
+	          OrderList = extras.getString("OrderList");
+	          OrderTotal = extras.getDouble("OrderTotal");
 	      }
-
+	     
+	      
+	      TextView ordertext = (TextView) findViewById(R.id.order);
+	      ordertext.setText("User ID: "+ userID+ " \n"  + "Name: "+ userName + " \n" + "Phone: " + phoneNumber + " \n" + "Address: " + address + " \n" + " \n" + OrderList + " \n" + "Total: " + OrderTotal);
 		/* This creates a yes no box to ask the user wheather they accept the order or not
 		 */
 		
-		if (orderStatus == false){            
+		if (OrderStatus == false){            
 		AlertDialog.Builder alert_box=new AlertDialog.Builder(this);
 		alert_box.setMessage("Accept Order?");
 		alert_box.setPositiveButton("Yes",new DialogInterface.OnClickListener(){
@@ -56,7 +64,7 @@ public class OrderActivity extends Activity implements OnClickListener {
 				   public void onClick(DialogInterface dialog, int which) {
 				    // TODO Auto-generated method stub
 				    Toast.makeText(getApplicationContext(), "Order Accepted",Toast.LENGTH_LONG).show();
-				    orderStatus = true;
+				    OrderStatus = true;
 				   }
 				  });
 				alert_box.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -95,7 +103,7 @@ public class OrderActivity extends Activity implements OnClickListener {
 	    		startActivity(j);
 	    		break;
 	    	case R.id.get_directions:
-	    		Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q="+address)); 
+	    		Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q="+ address)); 
 	    		startActivity(i);
 	    		break;
 	    	case R.id.get_call:

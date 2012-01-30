@@ -16,9 +16,10 @@ public class Order {
 	private Customer customer;
 	private ArrayList<ItemsOrdered> ItemsOrdered;
 	private double OrderTotal=0.00;
-	private boolean orderStatus;//initially order hasnt been accepted
+	private boolean OrderStatus;//initially order hasnt been accepted
 	private boolean orderComplete;
 	private boolean orderCancel;
+	private String OrderList;
 	/**
 	 * Constructor
 	 * @param id
@@ -28,15 +29,16 @@ public class Order {
 	 * @param orderStatus
 	 */
 	public Order(int id, Retailer curruser, Customer customer,
-			ArrayList<ItemsOrdered> detail, boolean orderStatus) {
+			ArrayList<ItemsOrdered> detail, boolean OrderStatus) {
 		super();
 		this.orderID = id;
 		this.retailer = curruser;
 		this.customer = customer;
 		this.ItemsOrdered = detail;
-		this.orderStatus = orderStatus;
+		this.OrderStatus = OrderStatus;
 		this.orderComplete = false;
 		this.orderCancel = false;
+		
 		
 	}
 
@@ -67,7 +69,13 @@ public class Order {
 	public ArrayList<ItemsOrdered> getItemsOrdered() {
 		return ItemsOrdered;
 	}
-
+    public String getItemsOrderedString(){
+    	
+    	for (int i = 0; i<=ItemsOrdered.size() - 1; i++){
+    		this.OrderList = new String( OrderList + ItemsOrdered.get(i));
+    	}
+    	return OrderList;
+    }
 	public void setItems(ItemsOrdered item) {
 		if (getOrderStatus())
 			this.ItemsOrdered.add(item);
@@ -81,11 +89,11 @@ public class Order {
 	}
 
 	public boolean getOrderStatus() {
-		return orderStatus;
+		return OrderStatus;
 	}
 
 	public void setOrderStatus(boolean orderStatus) {
-		this.orderStatus = orderStatus;
+		this.OrderStatus = orderStatus;
 	}
 	public void setOrderComplete(boolean OC){
 		this.orderComplete = OC;

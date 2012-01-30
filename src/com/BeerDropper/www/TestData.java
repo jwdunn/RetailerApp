@@ -16,24 +16,24 @@ public class TestData {
 
 		//create items
 
-		ItemsOrdered item0 = new ItemsOrdered("Jameson",4); list1.add(item0);
-		ItemsOrdered item9 = new ItemsOrdered("Jameson",7);list2.add(item9);
-		ItemsOrdered item1 = new ItemsOrdered("Feckin Irish Whiskey",3); list1.add(item1);
-		ItemsOrdered item10 = new ItemsOrdered("Feckin Irish Whiskey",5);list2.add(item10);
-		ItemsOrdered item2 = new ItemsOrdered("Seagrams 7",2); list1.add(item2);
-		ItemsOrdered item11 = new ItemsOrdered("Seagrams 7",4);list2.add(item11);
-		ItemsOrdered item3 = new ItemsOrdered("Seagrams VO",2); list1.add(item3);
-		ItemsOrdered item12 = new ItemsOrdered("Seagrams VO",3);list2.add(item12);
-		ItemsOrdered item4 = new ItemsOrdered("Canadian Club",1); list1.add(item4);
-		ItemsOrdered item13 = new ItemsOrdered("Canadian Club",3);list2.add(item13);
-		ItemsOrdered item5 = new ItemsOrdered("Jack Daniels",1); list1.add(item5);
-		ItemsOrdered item14 = new ItemsOrdered("Jack Daniels",2);list2.add(item14);
-		ItemsOrdered item6 = new ItemsOrdered("Gentlemans Jack",1); list1.add(item6);
-		ItemsOrdered item15 = new ItemsOrdered("Gentlemans Jack",2);list2.add(item15);
-		ItemsOrdered item7 = new ItemsOrdered("Makers Mark",1); list1.add(item7);
-		ItemsOrdered item16 = new ItemsOrdered("Makers Mark",2);list2.add(item16);
-		ItemsOrdered item8 = new ItemsOrdered("Knob Creek",1); list1.add(item8);
-		ItemsOrdered item17 = new ItemsOrdered("Knob Creek",2);list2.add(item17);
+		ItemsOrdered item0 = new ItemsOrdered(" Jameson",4 , 3.99); list1.add(item0);
+		ItemsOrdered item9 = new ItemsOrdered(" Jameson",7 , 5.99);list2.add(item9);
+		ItemsOrdered item1 = new ItemsOrdered(" Feckin Irish Whiskey ",3, 20.00); list1.add(item1);
+		ItemsOrdered item10 = new ItemsOrdered(" Feckin Irish Whiskey ",5, 30.00);list2.add(item10);
+		ItemsOrdered item2 = new ItemsOrdered(" Seagrams 7 ",2, 100.00); list1.add(item2);
+		ItemsOrdered item11 = new ItemsOrdered(" Seagrams 7 ",4, 4.87);list2.add(item11);
+		ItemsOrdered item3 = new ItemsOrdered(" Seagrams VO ",2, 6.99); list1.add(item3);
+		ItemsOrdered item12 = new ItemsOrdered(" Seagrams VO ",3, 34.25);list2.add(item12);
+		ItemsOrdered item4 = new ItemsOrdered(" Canadian Club ",1, 6.99); list1.add(item4);
+		ItemsOrdered item13 = new ItemsOrdered(" Canadian Club ",3, 25.99);list2.add(item13);
+		ItemsOrdered item5 = new ItemsOrdered(" Jack Daniels ",1, 37.35); list1.add(item5);
+		ItemsOrdered item14 = new ItemsOrdered(" Jack Daniels ",2, 7.89);list2.add(item14);
+		ItemsOrdered item6 = new ItemsOrdered(" Gentlemans Jack ",1, 56.78); list1.add(item6);
+		ItemsOrdered item15 = new ItemsOrdered(" Gentlemans Jack ",2,87.99);list2.add(item15);
+		ItemsOrdered item7 = new ItemsOrdered(" Makers Mark ",1, 56.00); list1.add(item7);
+		ItemsOrdered item16 = new ItemsOrdered(" Makers Mark ",2, 35.00);list2.add(item16);
+		ItemsOrdered item8 = new ItemsOrdered(" Knob Creek ",1, 67.00); list1.add(item8);
+		ItemsOrdered item17 = new ItemsOrdered(" Knob Creek ",2, 23.00);list2.add(item17);
 
 		//create retailers
 		Retailer retailer0 = new Retailer(10000,"charles St Liquors","Main Street",6175800,null);
@@ -44,31 +44,31 @@ public class TestData {
 		Retailer retailer5 = new Retailer(10005,"MainStreet","North Cir",6174430,null);
 
 
-		Customer customer0 = new Customer(20000,"John","",6171564,null);
+		Customer customer0 = new Customer(20000,"John","9 Briarstone Rd Rockport",6171564, null);
 		cust.add(customer0);
-		Customer customer1 = new Customer(20001,"Gabriel","Main Street",6175131,null);
+		Customer customer1 = new Customer(20001,"Gabriel","37 Main Street Waltham",6175131,null);
 		cust.add(customer1);
-		Customer customer2 = new Customer(20002,"Maxime","South St.",6178090,null);
+		Customer customer2 = new Customer(20002,"Maxime","415 South St Waltham.",6178090,null);
 		cust.add(customer2);
-		Customer customer3 = new Customer(20003,"Alexandre","East St",6170502,null);
+		Customer customer3 = new Customer(20003,"Alexandre","269 South Street Waltham",6170502,null);
 		cust.add(customer3);
-		Customer customer4 = new Customer(20004,"Hugo","Central St",6177173,null);
+		Customer customer4 = new Customer(20004,"Hugo","Bartlett NH",6177173,null);
 		cust.add(customer4);
-		Customer customer5 = new Customer(20005,"Noah","West Ave,",6170329,null);
+		Customer customer5 = new Customer(20005,"Noah","182 South Street Rockport MA,",6170329,null);
 		cust.add(customer5);
-		Customer customer6 = new Customer(20006,"Thomas","North Cir",6174874,null);
+		Customer customer6 = new Customer(20006,"Thomas","60 Hope Avenue Waltham",6174874,null);
 		cust.add(customer6);
-		Customer customer7 = new Customer(20007,"Antoine","",6175791,null);
+		Customer customer7 = new Customer(20007,"Antoine","EastSide Mortoring Waltham",6175791,null);
 		cust.add(customer7);
-		Customer customer8 = new Customer(20008,"Louis","Main Street",6179308,null);
+		Customer customer8 = new Customer(20008,"Louis","Boston Gardens",6179308,null);
 		cust.add(customer8);
-		Customer customer9 = new Customer(20009,"Gaspar","South St.",6175602,null);
+		Customer customer9 = new Customer(20009,"Gaspar","Brandeis University",6175602,null);
 		cust.add(customer9);
 
 		//customer 1 buys 3 items from retailer 1
 
-		order1 =new Order(0, retailer0, customer1, list1, false);
-		order2 =new Order(1, retailer0, customer3, list2, false);
+		order1 =new Order(0, retailer0, customer1, list1, true);
+		order2 =new Order(1, retailer0, customer3, list2, true);
 		order3 =new Order(2, retailer0, customer2, list1, false);
 		order4 =new Order(3, retailer0, customer4, list2, false);
 		order5 =new Order(4, retailer0, customer5, list1, false);
